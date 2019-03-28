@@ -22,7 +22,7 @@ class CreateDoctorsTable extends Migration
 
             $table->integer('user_id')->unsigned()->index()->nullable();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
 
 
             $table->string('title');
