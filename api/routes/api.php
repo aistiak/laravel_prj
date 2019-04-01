@@ -14,9 +14,12 @@ use Illuminate\Http\Request;
 */
 Route::post('login', 'UserController@login');
 Route::post('register', 'UserController@register');
+Route::post('test','UserController@test');
 
 Route::group(['middleware' => 'auth:api'], function(){
 Route::post('details', 'UserController@details');
-Route::post('reg_as_doctor', 'UserType@registerAsDoctor');
+Route::post('regas_doc', 'DocController@RegisterAsDoc');
+Route::post('regas_hos', 'HospitalController@regAsHospital');
+Route::post('regas_pat', 'PatientController@regAsPatient');
 
 });

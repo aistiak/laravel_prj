@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->uuid('uuid')->unique()->nullable();
             $table->string('name');
-            $table->string('mobile_no');
+            $table->string('mobile_no')->nullable();
             $table->string('email')->nullable();
             $table->string('password');
             $table->string('role')->default('patient'); // get the role from hear

@@ -21,7 +21,8 @@ class CreateHospitalsTable extends Migration
             // hospital/clinic/diagonistic center/ eye / vaccin point/ skin_care_center / rihab center 
             $table->string('owner_type');
             // gov/privat/
-
+            $table->integer('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE'); 
             //$table->string('address');
             $table->string('link')->nullable();
             $table->string('total_bed')->nullable();

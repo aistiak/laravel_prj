@@ -38,4 +38,13 @@ public function doctor(){
 	return 	$this->hasOne(Doctor::class);
 }
 
+public function hospital(){
+	return $this->hasOne(Hospital::class);
+}
+
+public function patient(){
+
+	return $this->hasOne(Patient::class);
+}
+
 }
